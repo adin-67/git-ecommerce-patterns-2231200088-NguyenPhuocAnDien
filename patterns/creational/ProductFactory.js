@@ -34,6 +34,14 @@ class ProductFactory {
     createProduct(type, details) {
         // TODO: Implement the Factory method.
         // Use a switch statement or if/else chain to check the `type`.
+        switch (type.toLowerCase()) {
+            case 'book':
+                return new Book(details);
+            case 'electronic':
+                return new Electronic(details);
+            default:
+                return new Product(details);
+        }
         // Based on the `type`, return a new instance of `Book`, `Electronic`, or a default `Product`.
         // Pass the `details` object to the constructor of the chosen class.
     }
