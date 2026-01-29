@@ -3,6 +3,15 @@ class Product {
         this.name = details.name || 'Generic Product';
         this.price = details.price || 0;
     }
+
+    getPrice() {
+        return this.price;
+    }
+
+    getDescription() {
+        return this.name;
+    }
+
     describe() {
         console.log(`${this.name} - $${this.price}`);
     }
@@ -14,6 +23,11 @@ class Book extends Product {
         this.name = details.title;
         this.author = details.author || 'Unknown';
     }
+
+    getDescription() {
+        return `Book: "${this.name}" by ${this.author}`;
+    }
+
     describe() {
         console.log(`Book: "${this.name}" by ${this.author} - $${this.price}`);
     }
@@ -24,6 +38,9 @@ class Electronic extends Product {
         super(details);
         this.name = details.model;
         this.brand = details.brand || 'Unknown';
+    }
+    getDescription() {
+        return `Electronic: ${this.brand} ${this.name}`;
     }
     describe() {
         console.log(`Electronic: ${this.brand} ${this.name} - $${this.price}`);
